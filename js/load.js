@@ -9,6 +9,7 @@ var loadState = {
     });
 
     game.load.spritesheet('studentAlien', 'assets/studentAlien.png');
+    game.load.image('laser', 'assets/laser.png');
   },
 
   create: function() {
