@@ -8,8 +8,10 @@ var loadState = {
       fill: '#ffffff'
     });
 
-    game.load.spritesheet('studentAlien', 'assets/studentAlien.png');
+    game.load.spritesheet('sAlien', 'assets/studentAlien.png');
+    game.load.image('background', 'assets/background.jpeg');
     game.load.image('laser', 'assets/laser.png');
+    game.load.image('player', 'assets/steve.png');
   },
 
   create: function() {
