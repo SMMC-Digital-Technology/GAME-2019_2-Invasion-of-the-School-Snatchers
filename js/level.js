@@ -48,7 +48,7 @@ var levelState = {
     sAlien.body.immovable = true;
 
     //Track the sprite's position and rotate with it
-    trackingSprite = weapon.trackSprite(player, player.height - 24, -2, true);
+    trackingSprite = laser.trackSprite(player, player.height - 24, -2, true);
 
     //Camera follows the player
     game.camera.follow(player, Phaser.Camera.FOLLOW_LOCKON, 0.1, 0.1);
@@ -56,6 +56,22 @@ var levelState = {
   },
 
   update: function() {
+    //player movement with WASD
+    if (a.isDown) {
+      player.body.velocity.x = -200;
+    } else if (d.isDown) {
+      player.body.velocity.x = 200;
+    } else {
+      player.body.velocity.x = 0;
+    }
+    if (w.isDown) {
+      player.body.velocity.y = -200;
+    } else if (s.isDown) {
+      player.body.velocity.y = 200;
+    } else {
+      player.body.velocity.y = 0;
+    }
+
     // do things on the game loop
   },
 
