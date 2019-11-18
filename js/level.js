@@ -78,6 +78,8 @@ var levelState = {
     //Aims the player at the cursor
     player.rotation = Math.atan2(game.input.activePointer.worldY - player.y, game.input.activePointer.worldX - player.x);
 
+    //Student Alien rotates to face the player
+    sAlien.rotation = Math.atan2(player.y - sAlien.y, player.x - sAlien.x) - Math.PI / 2;
 
 
   },
