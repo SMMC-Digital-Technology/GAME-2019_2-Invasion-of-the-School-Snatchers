@@ -72,7 +72,14 @@ var levelState = {
       player.body.velocity.y = 0;
     }
 
-    // do things on the game loop
+    //Makes the student Alien follow the player
+    game.physics.arcade.moveToObject(sAlien, player, 100)
+
+    //Aims the player at the cursor
+    player.rotation = Math.atan2(game.input.activePointer.worldY - player.y, game.input.activePointer.worldX - player.x);
+
+
+
   },
 
   // this is how you write a function
