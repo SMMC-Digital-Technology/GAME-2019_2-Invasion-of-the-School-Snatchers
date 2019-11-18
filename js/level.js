@@ -7,7 +7,7 @@
  */
 
  //Test to see if github works for me - Paddy
- 
+
 var levelState = {
   create: function() {
 
@@ -20,7 +20,7 @@ var levelState = {
     d = game.input.keyboard.addKey(Phaser.Keyboard.D);
 
     //background and world bounds
-    background = game.add.sprite(0, 0, 'background');
+    background = game.add.sprite(0, 0, 'level3BG');
     game.world.setBounds(0, 0, background.width, background.height);
 
     //laser
