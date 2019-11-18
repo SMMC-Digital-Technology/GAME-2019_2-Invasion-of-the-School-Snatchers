@@ -13,5 +13,5 @@ game.global = {
    // access using game.global
    // eg game.gloabl.score
 };
-
+    console.log('Game state complete');
 game.state.start('boot');

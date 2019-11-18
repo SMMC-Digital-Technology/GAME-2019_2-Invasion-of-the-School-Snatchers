@@ -4,16 +4,18 @@
  */
 var menuState = {
    create: function() {
-      // create the scene
-   },
+     button = game.add.button(250, 250, 'laser');
+     button.anchor.setTo(0.5,0.5);
+     button.scale.setTo(0.5,0.5);
+     button.onInputUp.add(changeState);
+     buttonText = game.add.text(button.x,button.y,'Level 3');
+     text.anchor.setTo(0.5,0.5);
+    }
+}
 
-   // this is how you write a function
-   // note the comma after the } above
-   // see that variables go in the brackets still
-   // to use this function in collision detection, write this.exampleFunction
-   // to call it manually, write this.exampleFunction(1, 2)
-   exampleFunction: function(something, somethingElse) {
-
+   changeState: function(levelState) {
+    game.state.start('level');
+        console.log('Menu state complete');
    }
 
-};
+}
