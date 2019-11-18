@@ -6,7 +6,7 @@
  * level2State etc will work fine
  */
 
- //Test to see if github works for me - Paddy
+//Test to see if github works for me - Paddy
 
 var levelState = {
   create: function() {
@@ -41,11 +41,17 @@ var levelState = {
     sAlien = game.add.sprite(game.world.centerX + 100, game.world.centerY + 100, 'sAlien');
     sAlien.anchor.setTo(0.5);
     sAlien.scale.setTo(0.3);
-    sAlien.animations.add('attack');
-    sAlien.animations.play('attack', 50, true);
+    sAlien.animations.add('StudentMove');
+    sAlien.animations.play('StudentMove', 50, true);
     game.physics.arcade.enable(sAlien);
     sAlien.body.setSize(300, 140, 30, 120);
     sAlien.body.immovable = true;
+
+    //Track the sprite's position and rotate with it
+    trackingSprite = weapon.trackSprite(player, player.height - 24, -2, true);
+
+    //Camera follows the player
+    game.camera.follow(player, Phaser.Camera.FOLLOW_LOCKON, 0.1, 0.1);
 
   },
 
