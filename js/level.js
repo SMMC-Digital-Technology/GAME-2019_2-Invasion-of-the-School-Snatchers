@@ -34,9 +34,12 @@ var levelState = {
     //Player
     player = game.add.sprite(game.world.centerX, game.world.centerY, 'player');
     player.anchor.setTo(0.5);
+    //player.scale.setTo(0.75);
     game.physics.arcade.enable(player);
     player.body.collideWorldBounds = true;
     player.body.immovable = true;
+
+    //game.physics.arcade.collide('player', 'sAlien');
 
     //studentAlien
     sAlien = game.add.sprite(game.world.centerX + 100, game.world.centerY + 100, 'sAlien');
