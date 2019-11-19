@@ -21,7 +21,7 @@ var levelState = {
 
     //background and world bounds
     background = game.add.sprite(0, 0, 'level3BG');
-    background.scale.setTo(2);
+    background.scale.setTo(2.5);
     game.world.setBounds(0, 0, background.width, background.height);
 
     //laser
