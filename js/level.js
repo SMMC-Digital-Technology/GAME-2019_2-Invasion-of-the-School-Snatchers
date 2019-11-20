@@ -81,9 +81,8 @@ var levelState = {
     game.physics.arcade.moveToObject(sAlien, player, 100)
 
     //Aims the player at the cursor
+    player.rotation = Math.atan2(game.input.activePointer.worldY - player.y, game.input.activePointer.worldX - player.x)
 
-    //Student Alien rotates to face the player
-    sAlien.rotation = Math.atan2(player.y - sAlien.y, player.x - sAlien.x) - Math.PI / 2;
     //laser shoots when the spacebar is down
     if (spacebar.isDown) {
       fire = laser.fire();
@@ -109,7 +108,9 @@ var levelState = {
             //sAlien.visible = false;
             */
     } else {
-      player.rotation = Math.atan2(game.input.activePointer.worldY - player.y, game.input.activePointer.worldX - player.x)
+    sAlien.rotation = Math.atan2(player.y - sAlien.y, player.x - sAlien.x) - Math.PI / 2;
+    sAlien.minRotation = 0;
+    sAlien.maxRotation = 360;
     }
     // this is how you write a function
     // note the comma after the } above
