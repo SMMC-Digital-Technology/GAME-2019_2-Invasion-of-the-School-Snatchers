@@ -6,9 +6,9 @@ var menuState = {
   create: function() {
     game.stage.backgroundColor = "#ffffff";
 
-    button = game.add.button(250, 250, 'laser');
+    button = game.add.button(480, 270, 'button');
     button.anchor.setTo(0.5, 0.5);
-    button.scale.setTo(0.5, 0.5);
+    button.scale.setTo(1.8, 1.8);
     button.onInputUp.add(LevelState);
     buttonText = game.add.text(button.x, button.y, 'Level 3');
     buttonText.anchor.setTo(0.5, 0.5);

@@ -12,6 +12,8 @@ var loadState = {
     game.load.image('level3BG', 'assets/mapLevel3.png');
     game.load.image('laser', 'assets/laser.png');
     game.load.image('player', 'assets/steve.png');
+    game.load.image('button', 'assets/button.png');
+    game.load.image('locker1', 'assets/locker1.png');
   },
 
   create: function() {

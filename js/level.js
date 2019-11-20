@@ -6,7 +6,6 @@
  * level2State etc will work fine
  */
 
-//Test to see if github works for me - Paddy
 
 var levelState = {
   create: function() {
@@ -49,6 +48,12 @@ var levelState = {
     sAlien.body.setSize(300, 140, 30, 120);
     sAlien.body.immovable = true;
 
+    //border Test
+    /*lockerB1 = game.add.sprite(1366, 1221, 'locker1');
+    game.physics.arcade.enable(lockerB1);
+    lockerB1.body.immovable = true;
+    lockerB1.anchor.setTo(0.5);*/
+
     //Track the sprite's position and rotate with it
     trackingSprite = laser.trackSprite(player, player.height - 24, -2, true);
 
@@ -75,7 +80,6 @@ var levelState = {
       player.body.velocity.y = 0;
     }
 
-    game.physics.arcade.collide(player, sAlien);
 
     //Makes the student Alien follow the player
     game.physics.arcade.moveToObject(sAlien, player, 100)
