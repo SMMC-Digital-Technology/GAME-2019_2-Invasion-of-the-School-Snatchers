@@ -34,7 +34,7 @@ var levelState = {
     //Player
     player = game.add.sprite(game.world.centerX, game.world.centerY, 'player');
     player.anchor.setTo(0.5);
-    //player.scale.setTo(0.75);
+    player.scale.setTo(0.9);
     game.physics.arcade.enable(player);
     player.body.collideWorldBounds = true;
     player.body.immovable = true;
@@ -54,6 +54,7 @@ var levelState = {
 
     //Camera follows the player
     game.camera.follow(player, Phaser.Camera.FOLLOW_LOCKON, 0.1, 0.1);
+    alienHealth = 5;
 
   },
 
@@ -80,7 +81,6 @@ var levelState = {
     game.physics.arcade.moveToObject(sAlien, player, 100)
 
     //Aims the player at the cursor
-    player.rotation = Math.atan2(game.input.activePointer.worldY - player.y, game.input.activePointer.worldX - player.x);
 
     //Student Alien rotates to face the player
     sAlien.rotation = Math.atan2(player.y - sAlien.y, player.x - sAlien.x) - Math.PI / 2;
@@ -88,7 +88,29 @@ var levelState = {
     if (spacebar.isDown) {
       fire = laser.fire();
     }
+    game.physics.arcade.overlap(laser.bullets, sAlien, Damage);
 
+    function Damage(bullet, sAlien) {
+      console.log('damage')
+      alienHealth -= 1
+      laser.killAll()
+    }
+
+    if (alienHealth < 0) {
+      sAlien.body.moves = false;
+      sAlien.minRotation = 0;
+      sAlien.maxRotation = 0;
+      //sAlien.body.enable = false;
+      /*
+            game.add.tween(sAlien).to({
+              alpha: 0
+            }, 200, Phaser.Easing.Linear.None, true, 0, 1000, true);
+            //sAlien.kill();
+            //sAlien.visible = false;
+            */
+    } else {
+      player.rotation = Math.atan2(game.input.activePointer.worldY - player.y, game.input.activePointer.worldX - player.x)
+    }
     // this is how you write a function
     // note the comma after the } above
     // see that variables go in the brackets still
