@@ -9,7 +9,7 @@ var loadState = {
     });
 
     game.load.spritesheet('sAlien', 'assets/studentAlien.png', 350, 270, 15);
-    game.load.image('level3BG', 'assets/mapLevel3.png');
+    game.load.image('level3', 'assets/level3.png');
     game.load.image('laser', 'assets/laser.png');
     game.load.image('player', 'assets/steve.png');
     game.load.image('button', 'assets/button.png');

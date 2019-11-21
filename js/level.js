@@ -8,6 +8,12 @@
 
 
 var levelState = {
+  render: function() {
+    game.debug.body(player);
+    game.debug.body(sAlien);
+    game.debug.body(lockerB1);
+  },
+
   create: function() {
 
     //cursors
@@ -19,7 +25,7 @@ var levelState = {
     d = game.input.keyboard.addKey(Phaser.Keyboard.D);
 
     //background and world bounds
-    background = game.add.sprite(0, 0, 'level3BG');
+    background = game.add.sprite(0, 0, 'level3');
     background.scale.setTo(2.5);
     game.world.setBounds(0, 0, background.width, background.height);
 
@@ -36,7 +42,6 @@ var levelState = {
     player.scale.setTo(0.9);
     game.physics.arcade.enable(player);
     player.body.collideWorldBounds = true;
-    player.body.immovable = true;
 
     //studentAlien
     sAlien = game.add.sprite(game.world.centerX + 100, game.world.centerY + 100, 'sAlien');
