@@ -13,11 +13,11 @@ var loadState = {
     game.load.image('laser', 'assets/laser.png');
     game.load.image('player', 'assets/steve.png');
     game.load.image('button', 'assets/button.png');
-    game.load.image('locker1', 'assets/locker1.png');
+    game.load.image('wall', 'assets/wall.png');
   },
 
   create: function() {
-    game.state.start('menu');
+    game.state.start('borders');
     console.log('Load state complete');
   }
 

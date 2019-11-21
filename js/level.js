@@ -11,7 +11,9 @@ var levelState = {
   render: function() {
     game.debug.body(player);
     game.debug.body(sAlien);
-    game.debug.body(lockerB1);
+    game.debug.body(wallGroup);
+    game.debug.inputInfo(32, 32);
+    game.debug.pointer(game.input.activePointer);
   },
 
   create: function() {
@@ -28,6 +30,9 @@ var levelState = {
     background = game.add.sprite(0, 0, 'level3');
     background.scale.setTo(2.5);
     game.world.setBounds(0, 0, background.width, background.height);
+
+    //adding in borders
+    borders();
 
     //laser
     laser = game.add.weapon(3000, 'laser');
@@ -51,13 +56,6 @@ var levelState = {
     sAlien.animations.play('StudentMove', 50, true);
     game.physics.arcade.enable(sAlien);
     sAlien.body.setSize(300, 140, 30, 120);
-    sAlien.body.immovable = true;
-
-    //border Test
-    lockerB1 = game.add.sprite(1366, 1221, 'locker1');
-    game.physics.arcade.enable(lockerB1);
-    lockerB1.body.immovable = true;
-    lockerB1.anchor.setTo(0.5);
 
     //Track the sprite's position and rotate with it
     trackingSprite = laser.trackSprite(player, player.height - 24, -2, true);
@@ -70,7 +68,9 @@ var levelState = {
 
   update: function() {
 
-    game.physics.arcade.collide(player, lockerB1);
+    game.physics.arcade.collide(player, wallGroup);
+    game.physics.arcade.collide(wallGroup, sAlien);
+
     //player movement with WASD
     if (a.isDown) {
       player.body.velocity.x = -200;
