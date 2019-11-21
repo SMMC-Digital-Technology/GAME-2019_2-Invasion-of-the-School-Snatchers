@@ -49,10 +49,10 @@ var levelState = {
     sAlien.body.immovable = true;
 
     //border Test
-    /*lockerB1 = game.add.sprite(1366, 1221, 'locker1');
+    lockerB1 = game.add.sprite(1366, 1221, 'locker1');
     game.physics.arcade.enable(lockerB1);
     lockerB1.body.immovable = true;
-    lockerB1.anchor.setTo(0.5);*/
+    lockerB1.anchor.setTo(0.5);
 
     //Track the sprite's position and rotate with it
     trackingSprite = laser.trackSprite(player, player.height - 24, -2, true);
@@ -64,6 +64,8 @@ var levelState = {
   },
 
   update: function() {
+
+    game.physics.arcade.collide(player, lockerB1);
     //player movement with WASD
     if (a.isDown) {
       player.body.velocity.x = -200;
