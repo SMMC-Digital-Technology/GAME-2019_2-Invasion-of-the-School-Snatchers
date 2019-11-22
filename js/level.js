@@ -8,13 +8,13 @@
 
 
 var levelState = {
-  render: function() {
+  /*render: function() {
     game.debug.body(player);
     game.debug.body(sAlien);
     game.debug.body(wallGroup);
     game.debug.inputInfo(32, 32);
     game.debug.pointer(game.input.activePointer);
-  },
+  },*/
 
   create: function() {
 
@@ -70,6 +70,12 @@ var levelState = {
 
     game.physics.arcade.collide(player, wallGroup);
     game.physics.arcade.collide(wallGroup, sAlien);
+    game.physics.arcade.collide(wallGroup, laser.bullets, laserWall);
+
+    //kill laser if it collides with a barrier
+    function laserWall(bullet) {
+      laser.killAll()
+    }
 
     //player movement with WASD
     if (a.isDown) {
