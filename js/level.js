@@ -8,15 +8,15 @@
 
 
 var levelState = {
-  /*
+
     render: function() {
-      game.debug.body(player);
-      game.debug.body(sAlien);
-      game.debug.body(wallGroup);
-      game.debug.inputInfo(32, 32);
+      //game.debug.body(player);
+      //game.debug.body(sAlien);
+      //game.debug.body(wallGroup);
+      //game.debug.inputInfo(32, 32);
       game.debug.pointer(game.input.activePointer);
     },
-  */
+
   create: function() {
 
     //cursors
@@ -51,6 +51,12 @@ var levelState = {
 
     AlienOneCreate();
 
+    ball = game.add.sprite(876, 1017, 'ball');
+    game.physics.arcade.enable(ball);
+    ball.body.collideWorldBounds = true;
+    ball.body.bounce.setTo(0.25);
+    ball.scale.setTo(0.15);
+
     //Track the sprite's position and rotate with it
     trackingSprite = laser.trackSprite(player, player.height - 24, -2, true);
 
@@ -62,6 +68,8 @@ var levelState = {
   update: function() {
 
     game.physics.arcade.collide(player, wallGroup);
+    game.physics.arcade.collide(player, ball);
+    game.physics.arcade.collide(ball, wallGroup)
     game.physics.arcade.collide(wallGroup, laser.bullets, laserWall);
 
     function laserWall(bullet) {

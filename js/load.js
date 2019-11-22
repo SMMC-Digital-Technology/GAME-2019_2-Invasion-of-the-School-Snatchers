@@ -14,6 +14,7 @@ var loadState = {
     game.load.image('player', 'assets/steve.png');
     game.load.image('button', 'assets/button.png');
     game.load.image('wall', 'assets/wall.png');
+    game.load.image('ball', 'assets/Ball.png');
   },
 
   create: function() {
