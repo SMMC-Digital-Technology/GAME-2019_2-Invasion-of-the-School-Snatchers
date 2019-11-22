@@ -8,13 +8,13 @@
 
 
 var levelState = {
-  /*render: function() {
+  render: function() {
     game.debug.body(player);
     game.debug.body(sAlien);
     game.debug.body(wallGroup);
     game.debug.inputInfo(32, 32);
     game.debug.pointer(game.input.activePointer);
-  },*/
+  },
 
   create: function() {
 
@@ -55,7 +55,7 @@ var levelState = {
     sAlien.animations.add('StudentMove');
     sAlien.animations.play('StudentMove', 50, true);
     game.physics.arcade.enable(sAlien);
-    sAlien.body.setSize(300, 140, 30, 120);
+    sAlien.body.setCircle(110, (sAlien.width / 2) + 20, (sAlien.height / 2) - 20);
 
     //Track the sprite's position and rotate with it
     trackingSprite = laser.trackSprite(player, player.height - 24, -2, true);
@@ -72,7 +72,6 @@ var levelState = {
     game.physics.arcade.collide(wallGroup, sAlien);
     game.physics.arcade.collide(wallGroup, laser.bullets, laserWall);
 
-    //kill laser if it collides with a barrier
     function laserWall(bullet) {
       laser.killAll()
     }
@@ -95,7 +94,7 @@ var levelState = {
 
 
     //Makes the student Alien follow the player
-    game.physics.arcade.moveToObject(sAlien, player, 100)
+    game.physics.arcade.moveToObject(sAlien, player, 150)
 
     //Aims the player at the cursor
     player.rotation = Math.atan2(game.input.activePointer.worldY - player.y, game.input.activePointer.worldX - player.x)
@@ -112,27 +111,24 @@ var levelState = {
       laser.killAll()
     }
 
+
     if (alienHealth < 0) {
       sAlien.body.moves = false;
       sAlien.minRotation = 0;
       sAlien.maxRotation = 0;
-      game.add.tween(sAlien).to({
+      anim = game.add.tween(sAlien).to({
         alpha: 0
       }, 200, Phaser.Easing.Linear.None, true, 0, 1000, true);
+      game.time.events.add(Phaser.Timer.SECOND * 1, Kill);
       sAlien.animations.stop('StudentMove', 50, true);
-      //sAlien.kill();
     } else {
       sAlien.rotation = Math.atan2(player.y - sAlien.y, player.x - sAlien.x) - Math.PI / 2;
       sAlien.minRotation = 0;
       sAlien.maxRotation = 360;
     }
-    // this is how you write a function
-    // note the comma after the } above
-    // see that variables go in the brackets still
-    // to use this function in collision detection, write this.exampleFunction
-    // to call it manually, write this.exampleFunction(1, 2)
-    //  exampleFunction: function(something, somethingElse) {
 
-    //}
+    function Kill() {
+      sAlien.kill();
+    }
   }
 };
