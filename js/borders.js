@@ -9,7 +9,7 @@
 
 var borderState = {
   create: function() {
-    game.state.start('level')
+    game.state.start('aliens')
     console.log('border state complete')
   }
 };
