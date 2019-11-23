@@ -25,11 +25,11 @@ var level3State = {
     game.world.setBounds(0, 0, background3.width, background3.height);
 
 
-    width = background3.width - 105
+    width = 1260 - 105
     height = background3.width - 81
 
     //adding in borders
-    borders();
+    borders3();
 
     AlienOneCreate();
 
@@ -43,11 +43,11 @@ var level3State = {
   },
   update: function() {
     allLevelsUpdate();
-    game.physics.arcade.collide(wallGroup, laser.bullets, laserWall);
-    game.physics.arcade.collide(wallGroup, AlienGroup);
-    game.physics.arcade.collide(player, wallGroup);
+    game.physics.arcade.collide(wallGroup3, laser.bullets, laserWall);
+    game.physics.arcade.collide(wallGroup3, AlienGroup);
+    game.physics.arcade.collide(player, wallGroup3);
     game.physics.arcade.collide(player, ball);
-    game.physics.arcade.collide(ball, wallGroup);
+    game.physics.arcade.collide(ball, wallGroup3);
 
     function laserWall(bullet) {
       laser.killAll()

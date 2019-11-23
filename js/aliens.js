@@ -34,6 +34,7 @@ function AlienOneCreate() {
     child.animations.add('StudentMove');
     child.animations.play('StudentMove', 50, true);
     child.body.setCircle(110, (child.width / 2) + 20, (child.height / 2) - 20);
+    child.body.collideWorldBounds = true;
   });
 
   alien1Health = 3;

@@ -1,7 +1,8 @@
 var level1State = {
 
   render: function() {
-
+    game.debug.pointer(game.input.activePointer);
+    game.debug.inputInfo(500, 300);
   },
 
   create: function() {
@@ -12,10 +13,15 @@ var level1State = {
 
     width = background1.width - 105
     height = background1.width - 81
+    borders1();
     AlienOneCreate();
     allLevelsCreate();
   },
   update: function() {
+    game.physics.arcade.collide(wallGroup1, laser.bullets, laserWall);
+    game.physics.arcade.collide(wallGroup1, AlienGroup);
+    game.physics.arcade.collide(player, wallGroup1);
+
     AlienOneUpdate();
     allLevelsUpdate();
 
