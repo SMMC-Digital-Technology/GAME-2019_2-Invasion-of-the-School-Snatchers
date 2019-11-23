@@ -13,8 +13,8 @@ var levelState = {
     //game.debug.body(player);
     //game.debug.body(sAlien);
     //game.debug.body(wallGroup);
-    game.debug.inputInfo(32, 32);
-    game.debug.pointer(game.input.activePointer);
+    //game.debug.inputInfo(32, 32);
+    //game.debug.pointer(game.input.activePointer);
   },
 
   create: function() {
@@ -48,6 +48,7 @@ var levelState = {
     player.scale.setTo(0.9);
     game.physics.arcade.enable(player);
     player.body.collideWorldBounds = true;
+    playerhealth = 50;
 
     AlienOneCreate();
 
@@ -63,6 +64,13 @@ var levelState = {
     //Camera follows the player
     game.camera.follow(player, Phaser.Camera.FOLLOW_LOCKON, 0.1, 0.1);
 
+    PlayerHealthText = game.add.text(200, 500, "Health: 500", {
+      font: "32px Arial",
+      fill: "#ffffff",
+      align: "center"
+    });
+    PlayerHealthText.fixedToCamera = true;
+    PlayerHealthText.cameraOffset.setTo(50, 50);
   },
 
   update: function() {
@@ -70,7 +78,19 @@ var levelState = {
     game.physics.arcade.collide(player, wallGroup);
     game.physics.arcade.collide(player, ball);
     game.physics.arcade.collide(ball, wallGroup)
+    game.physics.arcade.collide(player, AlienGroup, PlayerDamage);
     game.physics.arcade.collide(wallGroup, laser.bullets, laserWall);
+
+    function PlayerDamage(player) {
+      console.log('hit')
+      playerhealth -= 1
+      PlayerHealthText.setText('Health: ' + playerhealth);
+      if (playerhealth <= 0) {
+        console.log('dead')
+        game.state.start('gameover');
+        console.log('level state complete');
+      }
+    }
 
     function laserWall(bullet) {
       laser.killAll()

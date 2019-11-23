@@ -9,6 +9,7 @@ var loadState = {
     });
     game.load.image('menuBackground', 'assets/menuBackground.png');
     game.load.image('brickBackground', 'assets/brickBackground.png');
+    game.load.image('GameoverText', 'assets/Gameover.png');
     game.load.spritesheet('sAlien', 'assets/studentAlien.png', 350, 270, 15);
     game.load.image('level3', 'assets/level3.png');
     game.load.image('laser', 'assets/laser.png');
@@ -19,7 +20,7 @@ var loadState = {
   },
 
   create: function() {
-    game.state.start('borders');
+    game.state.start('menu');
     console.log('Load state complete');
   }
 
