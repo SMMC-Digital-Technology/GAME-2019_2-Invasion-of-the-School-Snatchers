@@ -5,16 +5,18 @@
 var menuState = {
   create: function() {
     game.stage.backgroundColor = "#ffffff";
+    mBackground = game.add.sprite(0, 0, 'menuBackground');
+    mBackground.scale.setTo(0.5)
 
-    button = game.add.button(480, 270, 'button');
+    button = game.add.button(game.world.centerX, 300, 'button');
     button.anchor.setTo(0.5, 0.5);
-    button.scale.setTo(1.8, 1.8);
-    button.onInputUp.add(LevelState);
-    buttonText = game.add.text(button.x, button.y, 'Level 3');
+    button.scale.setTo(2);
+    button.onInputUp.add(SelectorState);
+    buttonText = game.add.text(button.x, button.y, 'LEVELS');
     buttonText.anchor.setTo(0.5, 0.5);
 
-    function LevelState() {
-      game.state.start('level');
+    function SelectorState() {
+      game.state.start('levelSelector');
       console.log('Menu state complete');
     }
   }

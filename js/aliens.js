@@ -9,7 +9,7 @@
 
 var alienState = {
   create: function() {
-    game.state.start('level')
+    game.state.start('menu')
     console.log('alien state complete')
   }
 };

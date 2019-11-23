@@ -5,6 +5,7 @@ game.state.add('load', loadState);
 game.state.add('borders', borderState);
 game.state.add('aliens', alienState);
 game.state.add('menu', menuState);
+game.state.add('levelSelector', selectorState);
 game.state.add('level', levelState);
 // remember to add in additional levels as they are made
 game.state.add('gameover', gameoverState);
