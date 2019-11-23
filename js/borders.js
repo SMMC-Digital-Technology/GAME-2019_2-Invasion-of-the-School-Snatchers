@@ -109,7 +109,129 @@ function borders1() {
   wallGroup1.setAll('alpha', 0) //makes walls invisble
 }
 
+function borders2() {
 
+  wallGroup2 = game.add.group();
+
+  wallTwo1 = wallGroup2.create(865, 755, 'wall');
+  wallTwo1.width = 335;
+  wallTwo1.height = 4;
+
+  wallTwo2 = wallGroup2.create(1474, 755, 'wall');
+  wallTwo2.width = 275;
+  wallTwo2.height = 3.5;
+
+  wallTwo3 = wallGroup2.create(1130, 0, 'wall');
+  wallTwo3.width = 4;
+  wallTwo3.height = 755;
+
+  wallTwo4 = wallGroup2.create(866, 953, 'wall');
+  wallTwo4.width = 885;
+  wallTwo4.height = 3;
+
+  wallTwo5 = wallGroup2.create(1133, 0, 'wall');
+  wallTwo5.width = 430;
+  wallTwo5.height = 115;
+
+  wallTwo6 = wallGroup2.create(1407, 290, 'wall');
+  wallTwo6.width = 350;
+  wallTwo6.height = 112;
+
+  wallTwo7 = wallGroup2.create(1408, 550, 'wall');
+  wallTwo7.width = 350;
+  wallTwo7.height = 112;
+
+  wallTwo8 = wallGroup2.create(508, 0, 'wall');
+  wallTwo8.width = 4;
+  wallTwo8.height = 755;
+
+  wallTwo9 = wallGroup2.create(354, 756, 'wall');
+  wallTwo9.width = 255;
+  wallTwo9.height = 3;
+
+  wallTwo10 = wallGroup2.create(0, 755, 'wall');
+  wallTwo10.width = 88;
+  wallTwo10.height = 3;
+
+  wallTwo11 = wallGroup2.create(77, 143, 'wall');
+  wallTwo11.width = 431.5;
+  wallTwo11.height = 111.5;
+
+  wallTwo12 = wallGroup2.create(77, 435, 'wall');
+  wallTwo12.width = 431.5;
+  wallTwo12.height = 111.5;
+
+  wallTwo13 = wallGroup2.create(355, 667, 'wall');
+  wallTwo13.width = 153;
+  wallTwo13.height = 90;
+
+  wallTwo14 = wallGroup2.create(608, 0, 'wall');
+  wallTwo14.width = 362;
+  wallTwo14.height = 113.5;
+
+  wallTwo15 = wallGroup2.create(612.5, 253, 'wall');
+  wallTwo15.width = 355;
+  wallTwo15.height = 111;
+
+  wallTwo16 = wallGroup2.create(610.5, 495, 'wall');
+  wallTwo16.width = 353;
+  wallTwo16.height = 112;
+
+  wallTwo17 = wallGroup2.create(0, 953, 'wall');
+  wallTwo17.width = 634;
+  wallTwo17.height = 3;
+
+  wallTwo18 = wallGroup2.create(633, 953, 'wall');
+  wallTwo18.width = 3;
+  wallTwo18.height = 190;
+
+  wallTwo19 = wallGroup2.create(633, 1276, 'wall');
+  wallTwo19.width = 3;
+  wallTwo19.height = 225;
+
+  wallTwo20 = wallGroup2.create(865.5, 954, 'wall');
+  wallTwo20.width = 3;
+  wallTwo20.height = 130;
+
+  wallTwo21 = wallGroup2.create(865.5, 1220, 'wall');
+  wallTwo21.width = 3;
+  wallTwo21.height = 283;
+
+  wallTwo22 = wallGroup2.create(873, 1220, 'wall');
+  wallTwo22.width = 154;
+  wallTwo22.height = 281;
+
+  wallTwo23 = wallGroup2.create(1320, 955, 'wall');
+  wallTwo23.width = 430;
+  wallTwo23.height = 117.5;
+
+  wallTwo24 = wallGroup2.create(1320, 1169, 'wall');
+  wallTwo24.width = 430;
+  wallTwo24.height = 113;
+
+  wallTwo25 = wallGroup2.create(1320.5, 1385, 'wall');
+  wallTwo25.width = 430;
+  wallTwo25.height = 115;
+
+  wallTwo26 = wallGroup2.create(318, 1035, 'wall');
+  wallTwo26.width = 290;
+  wallTwo26.height = 95;
+
+  wallTwo27 = wallGroup2.create(319, 1330, 'wall');
+  wallTwo27.width = 300;
+  wallTwo27.height = 148;
+
+  wallTwo28 = wallGroup2.create(7, 1012, 'wall');
+  wallTwo28.width = 159.5;
+  wallTwo28.height = 433;
+
+  game.physics.arcade.enable(wallGroup2);
+  wallGroup2.children.forEach(function(child) {
+    child.body.immovable = true;
+  });
+
+  wallGroup2.setAll('alpha', 0);
+}
 
 
 

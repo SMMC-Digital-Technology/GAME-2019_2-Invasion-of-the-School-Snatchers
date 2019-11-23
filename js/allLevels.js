@@ -1,7 +1,7 @@
 var allLevelsState = {
 
   create: function() {
-    game.state.start('level1')
+    game.state.start('menu')
     console.log('all levels state complete')
   }
 };

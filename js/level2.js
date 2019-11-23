@@ -9,8 +9,6 @@
 
 var level2State = {
 
-  render: function() {},
-
   create: function() {
     //background and world bounds
     background2 = game.add.sprite(0, 0, 'level2');
@@ -19,13 +17,16 @@ var level2State = {
 
     width = background2.width - 105
     height = background2.width - 81
-
+    borders2();
     AlienOneCreate();
     allLevelsCreate();
   },
   update: function() {
     AlienOneUpdate();
     allLevelsUpdate();
+    game.physics.arcade.collide(wallGroup2, laser.bullets, laserWall);
+    game.physics.arcade.collide(wallGroup2, AlienGroup);
+    game.physics.arcade.collide(player, wallGroup2);
 
     function laserWall(bullet) {
       laser.killAll()
