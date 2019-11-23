@@ -1,12 +1,3 @@
-/**
- * A single level of the game.
- * You will need multiple copies of this for each level you
- * want to include.
- * Make sure they have different file names and different state names.
- * level2State etc will work fine
- */
-
-
 var borderState = {
   create: function() {
     game.state.start('aliens')

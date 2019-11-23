@@ -1,15 +1,6 @@
-/**
- * A single level of the game.
- * You will need multiple copies of this for each level you
- * want to include.
- * Make sure they have different file names and different state names.
- * level2State etc will work fine
- */
-
-
 var alienState = {
   create: function() {
-    game.state.start('menu')
+    game.state.start('allLevels')
     console.log('alien state complete')
   }
 };
@@ -17,23 +8,23 @@ var alienState = {
 function AlienOneCreate() {
   AlienGroup = game.add.group();
 
-  Alien1 = AlienGroup.create(game.rnd.integerInRange(105, 1260 - 105), game.rnd.integerInRange(105, background.height - 81), 'sAlien');
-  Alien2 = AlienGroup.create(game.rnd.integerInRange(105, 1260 - 105), game.rnd.integerInRange(105, background.height - 81), 'sAlien');
-  Alien3 = AlienGroup.create(game.rnd.integerInRange(105, 1260 - 105), game.rnd.integerInRange(105, background.height - 81), 'sAlien');
-  Alien4 = AlienGroup.create(game.rnd.integerInRange(105, 1260 - 105), game.rnd.integerInRange(105, background.height - 81), 'sAlien');
-  Alien5 = AlienGroup.create(game.rnd.integerInRange(105, 1260 - 105), game.rnd.integerInRange(105, background.height - 81), 'sAlien');
-  Alien6 = AlienGroup.create(game.rnd.integerInRange(105, 1260 - 105), game.rnd.integerInRange(105, background.height - 81), 'sAlien');
-  Alien7 = AlienGroup.create(game.rnd.integerInRange(105, 1260 - 105), game.rnd.integerInRange(105, background.height - 81), 'sAlien');
-  Alien8 = AlienGroup.create(game.rnd.integerInRange(105, 1260 - 105), game.rnd.integerInRange(105, background.height - 81), 'sAlien');
-  Alien9 = AlienGroup.create(game.rnd.integerInRange(105, 1260 - 105), game.rnd.integerInRange(105, background.height - 81), 'sAlien');
-  Alien10 = AlienGroup.create(game.rnd.integerInRange(105, 1260 - 105), game.rnd.integerInRange(105, background.height - 81), 'sAlien');
-  /*  Alien11 = AlienGroup.create(game.rnd.integerInRange(105, 1260 - 105), game.rnd.integerInRange(105, background.height - 81), 'sAlien');
-    Alien12 = AlienGroup.create(game.rnd.integerInRange(105, 1260 - 105), game.rnd.integerInRange(105, background.height - 81), 'sAlien');
-    Alien13 = AlienGroup.create(game.rnd.integerInRange(105, 1260 - 105), game.rnd.integerInRange(105, background.height - 81), 'sAlien');
-    Alien14 = AlienGroup.create(game.rnd.integerInRange(105, 1260 - 105), game.rnd.integerInRange(105, background.height - 81), 'sAlien');
-    Alien15 = AlienGroup.create(game.rnd.integerInRange(105, 1260 - 105), game.rnd.integerInRange(105, background.height - 81), 'sAlien');
-    Alien16 = AlienGroup.create(game.rnd.integerInRange(105, 1260 - 105), game.rnd.integerInRange(105, background.height - 81), 'sAlien');
-    Alien17 = AlienGroup.create(game.rnd.integerInRange(105, 1260 - 105), game.rnd.integerInRange(105, background.height - 81), 'sAlien');
+  Alien1 = AlienGroup.create(game.rnd.integerInRange(width, 1260 - width), game.rnd.integerInRange(width, height), 'sAlien');
+  Alien2 = AlienGroup.create(game.rnd.integerInRange(width, 1260 - width), game.rnd.integerInRange(width, height), 'sAlien');
+  Alien3 = AlienGroup.create(game.rnd.integerInRange(width, 1260 - width), game.rnd.integerInRange(width, height), 'sAlien');
+  Alien4 = AlienGroup.create(game.rnd.integerInRange(width, 1260 - width), game.rnd.integerInRange(width, height), 'sAlien');
+  Alien5 = AlienGroup.create(game.rnd.integerInRange(width, 1260 - width), game.rnd.integerInRange(width, height), 'sAlien');
+  Alien6 = AlienGroup.create(game.rnd.integerInRange(width, 1260 - width), game.rnd.integerInRange(width, height), 'sAlien');
+  Alien7 = AlienGroup.create(game.rnd.integerInRange(width, 1260 - width), game.rnd.integerInRange(width, height), 'sAlien');
+  Alien8 = AlienGroup.create(game.rnd.integerInRange(width, 1260 - width), game.rnd.integerInRange(width, height), 'sAlien');
+  Alien9 = AlienGroup.create(game.rnd.integerInRange(width, 1260 - width), game.rnd.integerInRange(width, height), 'sAlien');
+  Alien10 = AlienGroup.create(game.rnd.integerInRange(width, 1260 - width), game.rnd.integerInRange(width, height), 'sAlien');
+  /*  Alien11 = AlienGroup.create(game.rnd.integerInRange(width, 1260 - width), game.rnd.integerInRange(width, height), 'sAlien');
+    Alien12 = AlienGroup.create(game.rnd.integerInRange(width, 1260 - width), game.rnd.integerInRange(width, height), 'sAlien');
+    Alien13 = AlienGroup.create(game.rnd.integerInRange(width, 1260 - width), game.rnd.integerInRange(width, height), 'sAlien');
+    Alien14 = AlienGroup.create(game.rnd.integerInRange(width, 1260 - width), game.rnd.integerInRange(width, height), 'sAlien');
+    Alien15 = AlienGroup.create(game.rnd.integerInRange(width, 1260 - width), game.rnd.integerInRange(width, height), 'sAlien');
+    Alien16 = AlienGroup.create(game.rnd.integerInRange(width, 1260 - width), game.rnd.integerInRange(width, height), 'sAlien');
+    Alien17 = AlienGroup.create(game.rnd.integerInRange(width, 1260 - width), game.rnd.integerInRange(width, height), 'sAlien');
   */
 
   AlienGroup.children.forEach(function(child) {
@@ -67,7 +58,6 @@ function AlienOneCreate() {
 function AlienOneUpdate() {
 
   AlienGroup.children.forEach(function(child) { //Applies code to all of the group's children to avoid using group code
-    game.physics.arcade.collide(wallGroup, child);
     game.physics.arcade.collide(AlienGroup, child);
     game.physics.arcade.moveToObject(child, player, 600)
     game.physics.arcade.overlap(laser.bullets, Alien1, Damage1);

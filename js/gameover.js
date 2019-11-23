@@ -20,7 +20,7 @@ var gameoverState = {
     function MenuState() {
       game.state.start('menu');
       console.log('Game over state complete');
-      game.state.start(game.state.gameroverState);
+      game.state.start(game.state.gameoverState);
     }
   }
 

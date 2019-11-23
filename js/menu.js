@@ -1,7 +1,3 @@
-/**
- * Displays a game menu
- * use game.state.start('level') to go levelState
- */
 var menuState = {
   create: function() {
     game.stage.backgroundColor = "#ffffff";
