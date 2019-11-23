@@ -14,7 +14,7 @@ var levelState = {
     //game.debug.body(sAlien);
     //game.debug.body(wallGroup);
     //game.debug.inputInfo(32, 32);
-    game.debug.pointer(game.input.activePointer);
+    //game.debug.pointer(game.input.activePointer);
   },
 
   create: function() {
