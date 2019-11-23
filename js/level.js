@@ -13,8 +13,8 @@ var levelState = {
     //game.debug.body(player);
     //game.debug.body(sAlien);
     //game.debug.body(wallGroup);
-    //game.debug.inputInfo(32, 32);
-    //game.debug.pointer(game.input.activePointer);
+    game.debug.inputInfo(32, 32);
+    game.debug.pointer(game.input.activePointer);
   },
 
   create: function() {
@@ -39,7 +39,7 @@ var levelState = {
     laser = game.add.weapon(3000, 'laser');
     laser.bullets.setAll('scale.x', 0.09); //scaling laser bullets x
     laser.bullets.setAll('scale.y', 0.09); //scaling laser bullets y
-    laser.bulletSpeed = 1000; //bullet speed
+    laser.bulletSpeed = 2000; //bullet speed
     laser.fireRate = 450; //bullet firerate
 
     //Player
@@ -78,16 +78,16 @@ var levelState = {
 
     //player movement with WASD
     if (a.isDown) {
-      player.body.velocity.x = -200;
+      player.body.velocity.x = -600;
     } else if (d.isDown) {
-      player.body.velocity.x = 200;
+      player.body.velocity.x = 600;
     } else {
       player.body.velocity.x = 0;
     }
     if (w.isDown) {
-      player.body.velocity.y = -200;
+      player.body.velocity.y = -600;
     } else if (s.isDown) {
-      player.body.velocity.y = 200;
+      player.body.velocity.y = 600;
     } else {
       player.body.velocity.y = 0;
     }
