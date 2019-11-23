@@ -37,6 +37,7 @@ function AlienOneCreate() {
   Alien18 = AlienGroup.create(game.rnd.integerInRange(105, background.width - 105), game.rnd.integerInRange(105, background.height - 81), 'sAlien');
   Alien19 = AlienGroup.create(game.rnd.integerInRange(105, background.width - 105), game.rnd.integerInRange(105, background.height - 81), 'sAlien');
   Alien20 = AlienGroup.create(game.rnd.integerInRange(105, background.width - 105), game.rnd.integerInRange(105, background.height - 81), 'sAlien');
+  Alien21 = AlienGroup.create(game.rnd.integerInRange(105, background.width - 105), game.rnd.integerInRange(105, background.height - 81), 'sAlien');
 
 
   AlienGroup.children.forEach(function(child) {
