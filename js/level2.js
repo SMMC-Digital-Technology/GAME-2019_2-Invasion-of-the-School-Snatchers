@@ -1,13 +1,8 @@
-/**
- * A single level of the game.
- * You will need multiple copies of this for each level you
- * want to include.
- * Make sure they have different file names and different state names.
- * level2State etc will work fine
- */
-
-
 var level2State = {
+  render: function() {
+    //game.debug.pointer(game.input.activePointer);
+    //game.debug.inputInfo(500, 300);
+  },
 
   create: function() {
     //background and world bounds
@@ -18,8 +13,11 @@ var level2State = {
     width = background2.width - 105
     height = background2.height - 81
     borders2();
-    AlienOneCreate();
+    PlayerStartX = 755
+    PlayerStartY = 1468
     allLevelsCreate();
+    AlienOneCreate();
+
 
     PlayerHealthText = game.add.text(200, 500, "Health: " + playerhealth, {
       font: "32px Arial",
@@ -33,8 +31,10 @@ var level2State = {
   },
   update: function() {
     AlienOneUpdate();
+    wallGroup = wallGroup2
     allLevelsUpdate();
     game.physics.arcade.collide(wallGroup2, laser.bullets, laserWall);
+    game.physics.arcade.collide(wallGroup2, AlienGroup);
     game.physics.arcade.collide(player, wallGroup2);
 
     function laserWall(bullet) {

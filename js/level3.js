@@ -13,8 +13,8 @@ var level3State = {
     //game.debug.body(player);
     //game.debug.body(sAlien);
     //game.debug.body(wallGroup);
-    game.debug.inputInfo(500, 300);
-    game.debug.pointer(game.input.activePointer);
+    //game.debug.inputInfo(500, 300);
+    //game.debug.pointer(game.input.activePointer);
   },
 
   create: function() {
@@ -30,6 +30,8 @@ var level3State = {
 
     //adding in borders
     borders3();
+    PlayerStartX = 1622;
+    PlayerStartY = 868;
     allLevelsCreate();
     AlienOneCreate();
 
@@ -51,7 +53,7 @@ var level3State = {
 
   },
   update: function() {
-    allLevelsUpdate();
+
     game.physics.arcade.collide(wallGroup3, laser.bullets, laserWall);
     game.physics.arcade.collide(wallGroup3, AlienGroup);
     game.physics.arcade.collide(player, wallGroup3);
@@ -62,6 +64,9 @@ var level3State = {
       laser.killAll()
     }
     AlienOneUpdate();
+    wallGroup = wallGroup3
+    allLevelsUpdate();
+
 
   }
 };

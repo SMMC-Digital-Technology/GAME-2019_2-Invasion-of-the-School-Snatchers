@@ -1,8 +1,8 @@
 var level1State = {
 
   render: function() {
-    game.debug.pointer(game.input.activePointer);
-    game.debug.inputInfo(500, 300);
+    //game.debug.pointer(game.input.activePointer);
+    //game.debug.inputInfo(500, 300);
   },
 
   create: function() {
@@ -14,8 +14,11 @@ var level1State = {
     width = background1.width - 105
     height = background1.height - 81
     borders1();
+    PlayerStartx = 1622;
+    PlayerStarty = 868;
     allLevelsCreate();
     AlienOneCreate();
+
     PlayerHealthText = game.add.text(200, 500, "Health: " + playerhealth, {
       font: "32px Arial",
       fill: "#ffffff",
@@ -27,11 +30,14 @@ var level1State = {
 
   },
   update: function() {
+    AlienOneUpdate();
+    wallGroup = wallGroup1
+    allLevelsUpdate();
     game.physics.arcade.collide(wallGroup1, laser.bullets, laserWall);
+    game.physics.arcade.collide(wallGroup1, AlienGroup);
     game.physics.arcade.collide(player, wallGroup1);
 
-    AlienOneUpdate();
-    allLevelsUpdate();
+
 
     function laserWall(bullet) {
       laser.killAll()

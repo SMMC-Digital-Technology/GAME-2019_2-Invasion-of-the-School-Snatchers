@@ -40,12 +40,12 @@ function allLevelsCreate() {
   laser.bulletLifespan = 50;
 
   //Player
-  player = game.add.sprite(game.world.centerX, game.world.centerY, 'player');
+  player = game.add.sprite(PlayerStartX, PlayerStartY, 'player');
   player.anchor.setTo(0.5);
   player.scale.setTo(0.9);
   game.physics.arcade.enable(player);
   player.body.collideWorldBounds = true;
-  playerhealth = 250;
+  playerhealth = 10;
 
   //Track the sprite's position and rotate with it
   trackingSprite = laser.trackSprite(player, player.height - 24, -2, true);
@@ -57,14 +57,11 @@ function allLevelsCreate() {
 
 function allLevelsUpdate() {
   game.physics.arcade.collide(player, AlienGroup, PlayerDamage);
-  game.physics.arcade.collide(AlienGroup, borders1);
-  game.physics.arcade.collide(AlienGroup, borders2);
-  game.physics.arcade.collide(AlienGroup, borders3);
 
   LongRangeGroup.children.forEach(function(child) {
-    game.physics.arcade.overlap(child, borders1(), reposition);
-    game.physics.arcade.overlap(child, borders2(), reposition);
-    game.physics.arcade.overlap(child, borders3(), reposition);
+    game.physics.arcade.overlap(LongRangeGroup, wallGroup, reposition);
+    game.physics.arcade.overlap(LongRangeGroup, wallGroup, reposition);
+    game.physics.arcade.overlap(LongRangeGroup, wallGroup, reposition);
     game.physics.arcade.overlap(child, player, CollectLongRange);
 
     function reposition(child) {
@@ -108,14 +105,14 @@ function allLevelsUpdate() {
 
   function PlayerDamage(player) {
 
-        console.log('hit')
-        playerhealth -= 1
-        PlayerHealthText.setText('Health: ' + playerhealth);
-        if (playerhealth <= 0) {
-          console.log('dead')
-          game.state.start('gameover');
-          console.log('level state complete');
-        }
+    console.log('hit')
+    playerhealth -= 1
+    PlayerHealthText.setText('Health: ' + playerhealth);
+    if (playerhealth <= 0) {
+      console.log('dead')
+      game.state.start('gameover');
+      console.log('level state complete');
+    }
 
   }
 
