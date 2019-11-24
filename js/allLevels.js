@@ -110,6 +110,7 @@ function allLevelsUpdate() {
     PlayerHealthText.setText('Health: ' + playerhealth);
     if (playerhealth <= 0) {
       console.log('dead')
+      PlayerStatus = 1
       game.state.start('gameover');
       console.log('level state complete');
     }

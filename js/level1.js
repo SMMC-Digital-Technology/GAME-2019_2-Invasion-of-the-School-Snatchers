@@ -6,6 +6,7 @@ var level1State = {
   },
 
   create: function() {
+    PlayerStatus = 0;
     //background and world bounds
     background1 = game.add.sprite(0, 0, 'level1');
     background1.scale.setTo(2.5);
@@ -14,8 +15,8 @@ var level1State = {
     width = background1.width - 105
     height = background1.height - 81
     borders1();
-    PlayerStartx = 1622;
-    PlayerStarty = 868;
+    PlayerStartX = 755;
+    PlayerStartY = 1468;
     allLevelsCreate();
     AlienOneCreate();
 

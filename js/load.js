@@ -9,7 +9,8 @@ var loadState = {
     });
     game.load.image('menuBackground', 'assets/menuBackground.png');
     game.load.image('brickBackground', 'assets/brickBackground.png');
-    game.load.image('GameoverText', 'assets/Gameover.png');
+    game.load.image('LoserText', 'assets/Gameover.png');
+    game.load.image('WinnerText', 'assets/WinText.png');
     game.load.spritesheet('sAlien', 'assets/studentAlien.png', 350, 270, 15);
     game.load.image('level1', 'assets/level1.png')
     game.load.image('level2', 'assets/level2.png')

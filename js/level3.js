@@ -18,6 +18,7 @@ var level3State = {
   },
 
   create: function() {
+    PlayerStatus = 0;
 
     //background and world bounds
     background3 = game.add.sprite(0, 0, 'level3');

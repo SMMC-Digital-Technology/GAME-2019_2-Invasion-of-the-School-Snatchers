@@ -5,9 +5,22 @@ var gameoverState = {
   create: function() {
     brickBackground = game.add.sprite(0, 0, 'brickBackground');
     brickBackground.scale.setTo(1);
-    GameoverText = game.add.sprite(470, 540 / 2, 'GameoverText');
-    GameoverText.anchor.setTo(0.5);
-    GameoverText.scale.setTo(0.6);
+
+    WinnerText = game.add.sprite(470, 540 / 2, 'WinnerText');
+    WinnerText.anchor.setTo(0.5);
+    WinnerText.scale.setTo(0.6);
+
+    LoserText = game.add.sprite(470, 540 / 2, 'LoserText');
+    LoserText.anchor.setTo(0.5);
+    LoserText.scale.setTo(0.6);
+
+    if (PlayerStatus !== 2) {
+      WinnerText.visible = false
+      LoserText.visible = true
+    } else if (PlayerStatus == 2) {
+      LoserText.visible = false
+      WinnerText.visible = true
+    }
 
     restartButton = game.add.button(470, 420, 'button');
     restartButton.anchor.setTo(0.5, 0.5);

@@ -5,6 +5,8 @@ var level2State = {
   },
 
   create: function() {
+    PlayerStatus = 0;
+
     //background and world bounds
     background2 = game.add.sprite(0, 0, 'level2');
     background2.scale.setTo(2.5);

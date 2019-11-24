@@ -37,6 +37,8 @@ function AlienOneCreate() {
   alien7Health = 3;
   alien8Health = 3;
   alien9Health = 3;
+
+  AlienPopulation = 9;
 }
 
 function AlienOneUpdate() {
@@ -249,39 +251,44 @@ function AlienOneUpdate() {
     }
 
     function Kill1() {
-      Alien1.kill();
+      AlienGroup.remove(Alien1);
     }
 
     function Kill2() {
-      Alien2.kill();
+      AlienGroup.remove(Alien2);
     }
 
     function Kill3() {
-      Alien3.kill();
+      AlienGroup.remove(Alien3);
     }
 
     function Kill4() {
-      Alien4.kill();
+      AlienGroup.remove(Alien4);
     }
 
     function Kill5() {
-      Alien5.kill();
+      AlienGroup.remove(Alien5);
     }
 
     function Kill6() {
-      Alien6.kill();
+      AlienGroup.remove(Alien6);
     }
 
     function Kill7() {
-      Alien7.kill();
+      AlienGroup.remove(Alien7);
     }
 
     function Kill8() {
-      Alien8.kill();
+      AlienGroup.remove(Alien8);
     }
 
     function Kill9() {
-      Alien9.kill();
+      AlienGroup.remove(Alien9);
+    }
+
+    if (AlienGroup.total == 0) {
+      PlayerStatus = 2
+      game.state.start('gameover')
     }
   });
 
