@@ -13,8 +13,8 @@ var level3State = {
     //game.debug.body(player);
     //game.debug.body(sAlien);
     //game.debug.body(wallGroup);
-    //game.debug.inputInfo(32, 32);
-    //game.debug.pointer(game.input.activePointer);
+    game.debug.inputInfo(500, 300);
+    game.debug.pointer(game.input.activePointer);
   },
 
   create: function() {
@@ -26,11 +26,11 @@ var level3State = {
 
 
     width = 1260 - 105
-    height = background3.width - 81
+    height = background3.height - 81
 
     //adding in borders
     borders3();
-
+    allLevelsCreate();
     AlienOneCreate();
 
     ball = game.add.sprite(876, 1017, 'ball');
@@ -39,7 +39,7 @@ var level3State = {
     ball.body.bounce.setTo(0.25);
     ball.scale.setTo(0.15);
 
-    allLevelsCreate();
+
   },
   update: function() {
     allLevelsUpdate();

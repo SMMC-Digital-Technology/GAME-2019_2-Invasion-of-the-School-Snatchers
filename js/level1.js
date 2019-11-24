@@ -12,7 +12,7 @@ var level1State = {
     game.world.setBounds(0, 0, background1.width, background1.height);
 
     width = background1.width - 105
-    height = background1.width - 81
+    height = background1.height - 81
     borders1();
     AlienOneCreate();
     allLevelsCreate();

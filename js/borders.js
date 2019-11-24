@@ -277,60 +277,56 @@ function borders3() {
   wallThree8.height = 225;
 
   wallThree9 = wallGroup3.create(1265, 314, 'wall');
-  wallThree9.width = 36;
-  wallThree9.height = 475;
+  wallThree9.width = 600;
+  wallThree9.height = 448.2;
 
-  wallThree10 = wallGroup3.create(1299, 314, 'wall');
-  wallThree10.width = 450;
-  wallThree10.height = 8;
+  wallThree10 = wallGroup3.create(1265, 762.4, 'wall');
+  wallThree10.width = 37.8;
+  wallThree10.height = 27.4;
 
-  wallThree11 = wallGroup3.create(1299, 754, 'wall');
+  wallThree11 = wallGroup3.create(1299, 950, 'wall');
   wallThree11.width = 450;
   wallThree11.height = 8;
 
-  wallThree12 = wallGroup3.create(1299, 950, 'wall');
-  wallThree12.width = 450;
-  wallThree12.height = 8;
+  wallThree12 = wallGroup3.create(1268, 916, 'wall');
+  wallThree12.width = 34;
+  wallThree12.height = 146;
 
-  wallThree13 = wallGroup3.create(1268, 916, 'wall');
+  wallThree13 = wallGroup3.create(1267, 1178, 'wall');
   wallThree13.width = 34;
-  wallThree13.height = 146;
+  wallThree13.height = 350;
 
-  wallThree14 = wallGroup3.create(1267, 1178, 'wall');
-  wallThree14.width = 34;
-  wallThree14.height = 350;
+  wallThree14 = wallGroup3.create(1404, 1026, 'wall');
+  wallThree14.width = 269;
+  wallThree14.height = 52;
 
-  wallThree15 = wallGroup3.create(1404, 1026, 'wall');
-  wallThree15.width = 269;
-  wallThree15.height = 52;
+  wallThree15 = wallGroup3.create(1402, 1168, 'wall');
+  wallThree15.width = 271;
+  wallThree15.height = 50;
 
-  wallThree16 = wallGroup3.create(1402, 1168, 'wall');
-  wallThree16.width = 271;
+  wallThree16 = wallGroup3.create(1402, 1307, 'wall');
+  wallThree16.width = 270;
   wallThree16.height = 50;
 
-  wallThree17 = wallGroup3.create(1402, 1307, 'wall');
+  wallThree17 = wallGroup3.create(1402, 1454, 'wall');
   wallThree17.width = 270;
   wallThree17.height = 50;
 
-  wallThree18 = wallGroup3.create(1402, 1454, 'wall');
-  wallThree18.width = 270;
-  wallThree18.height = 50;
+  wallThree18 = wallGroup3.create(620, 933, 'wall');
+  wallThree18.width = 66;
+  wallThree18.height = 162;
 
-  wallThree19 = wallGroup3.create(620, 933, 'wall');
-  wallThree19.width = 66;
-  wallThree19.height = 162;
+  wallThree21 = wallGroup3.create(1070, 934, 'wall');
+  wallThree21.width = 70;
+  wallThree21.height = 162;
 
-  wallThree20 = wallGroup3.create(1070, 934, 'wall');
-  wallThree20.width = 70;
-  wallThree20.height = 162;
-
-  wallThree21 = wallGroup3.create(1422, 179, 'wall');
-  wallThree21.width = 263;
-  wallThree21.height = 52;
-
-  wallThree22 = wallGroup3.create(1510, 0, 'wall');
+  wallThree22 = wallGroup3.create(1422, 179, 'wall');
   wallThree22.width = 263;
-  wallThree22.height = 87;
+  wallThree22.height = 52;
+
+  wallThree23 = wallGroup3.create(1510, 0, 'wall');
+  wallThree23.width = 263;
+  wallThree23.height = 87;
 
   game.physics.arcade.enable(wallGroup3);
   wallGroup3.children.forEach(function(child) {

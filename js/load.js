@@ -19,6 +19,7 @@ var loadState = {
     game.load.image('button', 'assets/button.png');
     game.load.image('wall', 'assets/wall.png');
     game.load.image('ball', 'assets/Ball.png');
+    game.load.image('LongRange', 'assets/crosshair.png');
   },
 
   create: function() {
