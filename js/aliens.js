@@ -17,8 +17,8 @@ function AlienOneCreate() {
   Alien7 = AlienGroup.create(game.rnd.integerInRange(width, 1260 - width), game.rnd.integerInRange(width, height), 'sAlien');
   Alien8 = AlienGroup.create(game.rnd.integerInRange(width, 1260 - width), game.rnd.integerInRange(width, height), 'sAlien');
   Alien9 = AlienGroup.create(game.rnd.integerInRange(width, 1260 - width), game.rnd.integerInRange(width, height), 'sAlien');
-  Alien10 = AlienGroup.create(game.rnd.integerInRange(width, 1260 - width), game.rnd.integerInRange(width, height), 'sAlien');
-  /*  Alien11 = AlienGroup.create(game.rnd.integerInRange(width, 1260 - width), game.rnd.integerInRange(width, height), 'sAlien');
+  //Alien10 = AlienGroup.create(game.rnd.integerInRange(width, 1260 - width), game.rnd.integerInRange(width, height), 'sAlien');
+  /*Alien11 = AlienGroup.create(game.rnd.integerInRange(width, 1260 - width), game.rnd.integerInRange(width, height), 'sAlien');
     Alien12 = AlienGroup.create(game.rnd.integerInRange(width, 1260 - width), game.rnd.integerInRange(width, height), 'sAlien');
     Alien13 = AlienGroup.create(game.rnd.integerInRange(width, 1260 - width), game.rnd.integerInRange(width, height), 'sAlien');
     Alien14 = AlienGroup.create(game.rnd.integerInRange(width, 1260 - width), game.rnd.integerInRange(width, height), 'sAlien');
@@ -46,8 +46,8 @@ function AlienOneCreate() {
   alien7Health = 3;
   alien8Health = 3;
   alien9Health = 3;
-  alien10Health = 3;
-  /*  alien11Health = 3;
+  //alien10Health = 3;
+  /*alien11Health = 3;
     alien12Health = 3;
     alien13Health = 3;
     alien14Health = 3;
@@ -60,7 +60,7 @@ function AlienOneUpdate() {
 
   AlienGroup.children.forEach(function(child) { //Applies code to all of the group's children to avoid using group code
     game.physics.arcade.collide(AlienGroup, child);
-    game.physics.arcade.moveToObject(child, player, 600)
+    game.physics.arcade.moveToObject(child, player, 400)
     game.physics.arcade.overlap(laser.bullets, Alien1, Damage1);
     game.physics.arcade.overlap(laser.bullets, Alien2, Damage2);
     game.physics.arcade.overlap(laser.bullets, Alien3, Damage3);
@@ -70,8 +70,40 @@ function AlienOneUpdate() {
     game.physics.arcade.overlap(laser.bullets, Alien7, Damage7);
     game.physics.arcade.overlap(laser.bullets, Alien8, Damage8);
     game.physics.arcade.overlap(laser.bullets, Alien9, Damage9);
+
+/*individual collisions for aliens - its the least buggiest way
+* for aliens to collide.
+*/
+    game.physics.arcade.collide(Alien1, borders1);
+    game.physics.arcade.collide(Alien2, borders1);
+    game.physics.arcade.collide(Alien3, borders1);
+    game.physics.arcade.collide(Alien4, borders1);
+    game.physics.arcade.collide(Alien5, borders1);
+    game.physics.arcade.collide(Alien6, borders1);
+    game.physics.arcade.collide(Alien7, borders1);
+    game.physics.arcade.collide(Alien9, borders1);
+
+    game.physics.arcade.collide(Alien1, borders2);
+    game.physics.arcade.collide(Alien2, borders2);
+    game.physics.arcade.collide(Alien3, borders2);
+    game.physics.arcade.collide(Alien4, borders2);
+    game.physics.arcade.collide(Alien5, borders2);
+    game.physics.arcade.collide(Alien6, borders2);
+    game.physics.arcade.collide(Alien7, borders2);
+    game.physics.arcade.collide(Alien9, borders2);
+
+    game.physics.arcade.collide(Alien1, borders3);
+    game.physics.arcade.collide(Alien2, borders3);
+    game.physics.arcade.collide(Alien3, borders3);
+    game.physics.arcade.collide(Alien4, borders3);
+    game.physics.arcade.collide(Alien5, borders3);
+    game.physics.arcade.collide(Alien6, borders3);
+    game.physics.arcade.collide(Alien7, borders3);
+    game.physics.arcade.collide(Alien9, borders3);
+    /*game.physics.arcade.overlap(laser.bullets, Alien8, Damage8);
+    game.physics.arcade.overlap(laser.bullets, Alien9, Damage9);
     game.physics.arcade.overlap(laser.bullets, Alien10, Damage10);
-    /*    game.physics.arcade.overlap(laser.bullets, Alien11, Damage11);
+  /*  game.physics.arcade.overlap(laser.bullets, Alien11, Damage11);
         game.physics.arcade.overlap(laser.bullets, Alien12, Damage12);
         game.physics.arcade.overlap(laser.bullets, Alien13, Damage13);
         game.physics.arcade.overlap(laser.bullets, Alien14, Damage14);
@@ -138,13 +170,13 @@ function AlienOneUpdate() {
       laser.killAll()
 
     }
-
-    function Damage10(bullet, Alien10) {
-      console.log('damage')
-      alien10Health -= 1
-      laser.killAll()
-    }
-    /*
+//
+//    function Damage10(bullet, Alien10) {
+//    console.log('damage')
+//    alien10Health -= 1
+//    laser.killAll()
+//  }
+/*
         function Damage11(bullet, Alien11) {
           console.log('damage')
           alien11Health -= 1
@@ -326,7 +358,7 @@ function AlienOneUpdate() {
       Alien9.minRotation = 0;
       Alien9.maxRotation = 360;
     }
-
+/*
     if (alien10Health < 0) {
       Alien10.body.moves = false;
       Alien10.minRotation = 0;
@@ -341,7 +373,7 @@ function AlienOneUpdate() {
       Alien10.minRotation = 0;
       Alien10.maxRotation = 360;
     }
-    /*
+
         if (alien11Health < 0) {
           Alien11.body.moves = false;
           Alien11.minRotation = 0;
@@ -482,10 +514,10 @@ function AlienOneUpdate() {
     function Kill9() {
       Alien9.kill();
     }
-
-    function Kill10() {
-      Alien10.kill();
-    }
+//
+//  function Kill10() {
+//    Alien10.kill();
+//  }
 
     /*    function Kill11() {
           Alien11.kill();

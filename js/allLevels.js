@@ -28,7 +28,7 @@ function allLevelsCreate() {
   player.scale.setTo(0.9);
   game.physics.arcade.enable(player);
   player.body.collideWorldBounds = true;
-  playerhealth = 50;
+  playerhealth = 300;
 
   //Track the sprite's position and rotate with it
   trackingSprite = laser.trackSprite(player, player.height - 24, -2, true);
@@ -36,7 +36,7 @@ function allLevelsCreate() {
   //Camera follows the player
   game.camera.follow(player, Phaser.Camera.FOLLOW_LOCKON, 0.1, 0.1);
 
-  PlayerHealthText = game.add.text(200, 500, "Health: 500", {
+  PlayerHealthText = game.add.text(200, 500, "Health: " + playerhealth, {
     font: "32px Arial",
     fill: "#ffffff",
     align: "center"
@@ -48,9 +48,11 @@ function allLevelsCreate() {
 
 function allLevelsUpdate() {
   game.physics.arcade.collide(player, AlienGroup, PlayerDamage);
-
+  game.physics.arcade.collide(AlienGroup, borders1);
+  game.physics.arcade.collide(AlienGroup, borders2);
+  game.physics.arcade.collide(AlienGroup, borders3);
   function PlayerDamage(player) {
-    /*
+
         console.log('hit')
         playerhealth -= 1
         PlayerHealthText.setText('Health: ' + playerhealth);
@@ -59,7 +61,7 @@ function allLevelsUpdate() {
           game.state.start('gameover');
           console.log('level state complete');
         }
-          */
+
   }
 
 
