@@ -17,7 +17,7 @@ var gameoverState = {
     restartButtonText.anchor.setTo(0.5, 0.5);
 
     function SelectorState(button) {
-      game.state.start('game');
+      game.state.start('menu');
       console.log('Game over state complete');
       game.state.start(game.state.gameoverState);
     }
