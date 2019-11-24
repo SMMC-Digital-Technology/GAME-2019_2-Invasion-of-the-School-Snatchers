@@ -20,6 +20,16 @@ var level2State = {
     borders2();
     AlienOneCreate();
     allLevelsCreate();
+
+    PlayerHealthText = game.add.text(200, 500, "Health: " + playerhealth, {
+      font: "32px Arial",
+      fill: "#ffffff",
+      align: "center"
+    });
+    PlayerHealthText.fixedToCamera = true;
+    PlayerHealthText.cameraOffset.setTo(50, 50)
+
+
   },
   update: function() {
     AlienOneUpdate();

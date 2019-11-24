@@ -20,6 +20,7 @@ var loadState = {
     game.load.image('wall', 'assets/wall.png');
     game.load.image('ball', 'assets/Ball.png');
     game.load.image('LongRange', 'assets/crosshair.png');
+    game.load.image('FastFire', 'assets/bullet.png');
   },
 
   create: function() {

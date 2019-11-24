@@ -33,6 +33,15 @@ var level3State = {
     allLevelsCreate();
     AlienOneCreate();
 
+    PlayerHealthText = game.add.text(200, 500, "Health: " + playerhealth, {
+      font: "32px Arial",
+      fill: "#ffffff",
+      align: "center"
+    });
+    PlayerHealthText.fixedToCamera = true;
+    PlayerHealthText.cameraOffset.setTo(50, 50)
+
+
     ball = game.add.sprite(876, 1017, 'ball');
     game.physics.arcade.enable(ball);
     ball.body.collideWorldBounds = true;
