@@ -28,7 +28,6 @@ var level1State = {
   },
   update: function() {
     game.physics.arcade.collide(wallGroup1, laser.bullets, laserWall);
-    game.physics.arcade.collide([AlienGroup], [wallGroup1]);
     game.physics.arcade.collide(player, wallGroup1);
 
     AlienOneUpdate();

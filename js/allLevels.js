@@ -45,7 +45,7 @@ function allLevelsCreate() {
   player.scale.setTo(0.9);
   game.physics.arcade.enable(player);
   player.body.collideWorldBounds = true;
-  playerhealth = 300;
+  playerhealth = 250;
 
   //Track the sprite's position and rotate with it
   trackingSprite = laser.trackSprite(player, player.height - 24, -2, true);
@@ -107,7 +107,7 @@ function allLevelsUpdate() {
 
 
   function PlayerDamage(player) {
-    /*
+
         console.log('hit')
         playerhealth -= 1
         PlayerHealthText.setText('Health: ' + playerhealth);
@@ -116,7 +116,7 @@ function allLevelsUpdate() {
           game.state.start('gameover');
           console.log('level state complete');
         }
-    */
+
   }
 
 

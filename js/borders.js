@@ -1,6 +1,6 @@
 var borderState = {
   create: function() {
-    game.state.start('aliens')
+    game.state.start('menu')
     console.log('border state complete')
   }
 };
@@ -232,12 +232,6 @@ function borders2() {
 
   wallGroup2.setAll('alpha', 0);
 }
-
-
-
-
-
-
 
 //Level Three Borders
 function borders3() {
