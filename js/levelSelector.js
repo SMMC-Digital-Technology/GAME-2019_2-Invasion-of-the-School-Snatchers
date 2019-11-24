@@ -1,7 +1,7 @@
 var selectorState = {
   render: function() {
-    game.debug.pointer(game.input.activePointer);
-    game.debug.inputInfo(500, 300);
+    //game.debug.pointer(game.input.activePointer);
+    //game.debug.inputInfo(500, 300);
   },
 
   create: function() {
