@@ -1,8 +1,4 @@
 var level2State = {
-  render: function() {
-    //game.debug.pointer(game.input.activePointer);
-    //game.debug.inputInfo(500, 300);
-  },
 
   create: function() {
     PlayerStatus = 0;

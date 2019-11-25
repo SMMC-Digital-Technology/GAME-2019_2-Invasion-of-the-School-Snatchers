@@ -1,21 +1,4 @@
-/**
- * A single level of the game.
- * You will need multiple copies of this for each level you
- * want to include.
- * Make sure they have different file names and different state names.
- * level2State etc will work fine
- */
-
-
 var level3State = {
-
-  render: function() {
-    //game.debug.body(player);
-    //game.debug.body(sAlien);
-    //game.debug.body(wallGroup);
-    //game.debug.inputInfo(500, 300);
-    //game.debug.pointer(game.input.activePointer);
-  },
 
   create: function() {
     PlayerStatus = 0;

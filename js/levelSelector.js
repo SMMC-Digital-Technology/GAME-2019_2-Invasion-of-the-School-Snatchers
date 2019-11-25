@@ -1,17 +1,16 @@
 var selectorState = {
-  render: function() {
-    game.debug.pointer(game.input.activePointer);
-    game.debug.inputInfo(500, 300);
-  },
 
   create: function() {
     brickBackground = game.add.sprite(0, 0, 'brickBackground');
     brickBackground.scale.setTo(0.5)
 
-    InfoIcon = game.add.sprite(659, 60, 'InfoIcon');
+    InfoIcon = game.add.sprite(421, 305, 'InfoIcon');
     InfoIcon.scale.setTo(0.1)
 
-    InfoText = game.add.text(660, 128, '');
+    InfoText = game.add.text(420, 369, 'Use WASD to move \nUse the spacebar to fire your laser gun and aim with your cursor \nCollect the Long Range power-up for increased weapon range for ten seconds \nCollect the Fast Fire power-up for faster fire rate for ten seconds.', {
+      font: '11px Verdana',
+      fill: '#ffffff'
+    });
 
 
     Lvl1 = game.add.button(219, 158, 'button');
