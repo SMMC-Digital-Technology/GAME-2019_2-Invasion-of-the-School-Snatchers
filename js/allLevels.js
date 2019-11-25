@@ -56,6 +56,7 @@ function allLevelsCreate() {
 }
 
 function allLevelsUpdate() {
+//collisions between player and aliens to deal damage to the player
   game.physics.arcade.collide(player, AlienGroup, PlayerDamage);
 
   LongRangeGroup.children.forEach(function(child) {
@@ -64,11 +65,13 @@ function allLevelsUpdate() {
     game.physics.arcade.overlap(LongRangeGroup, wallGroup, reposition);
     game.physics.arcade.overlap(child, player, CollectLongRange);
 
+//reposition alien of they are on a wall
     function reposition(child) {
       child.x = game.rnd.integerInRange(105, width)
       child.y = game.rnd.integerInRange(81, height)
     }
 
+//make the bullets travel further for 10 seconds with the long range power up.
     function CollectLongRange(child, player) {
       child.kill();
       laser.bulletLifespan = 200;
@@ -105,6 +108,7 @@ function allLevelsUpdate() {
 
   function PlayerDamage(player) {
 
+//remove player health if colliding with an alien
     console.log('hit')
     playerhealth -= 1
     PlayerHealthText.setText('Health: ' + playerhealth);
@@ -121,16 +125,16 @@ function allLevelsUpdate() {
 
   //player movement with WASD
   if (a.isDown) {
-    player.body.velocity.x = -600;
+    player.body.velocity.x = -1200;
   } else if (d.isDown) {
-    player.body.velocity.x = 600;
+    player.body.velocity.x = 1200;
   } else {
     player.body.velocity.x = 0;
   }
   if (w.isDown) {
-    player.body.velocity.y = -600;
+    player.body.velocity.y = -1200;
   } else if (s.isDown) {
-    player.body.velocity.y = 600;
+    player.body.velocity.y = 1200;
   } else {
     player.body.velocity.y = 0;
   }

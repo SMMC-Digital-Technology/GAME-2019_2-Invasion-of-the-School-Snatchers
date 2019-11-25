@@ -4,7 +4,7 @@ var alienState = {
     console.log('alien state complete')
   }
 };
-
+//create the group for the aliens in each level
 function AlienOneCreate() {
   AlienGroup = game.add.group();
 
@@ -18,6 +18,7 @@ function AlienOneCreate() {
   Alien8 = AlienGroup.create(game.rnd.integerInRange(105, width), game.rnd.integerInRange(81, height), 'sAlien');
   Alien9 = AlienGroup.create(game.rnd.integerInRange(105, width), game.rnd.integerInRange(81, height), 'sAlien');
 
+//enable physics and animations for ther group
   AlienGroup.children.forEach(function(child) {
     game.physics.arcade.enable(child);
     child.anchor.setTo(0.5);
@@ -28,6 +29,7 @@ function AlienOneCreate() {
     child.body.collideWorldBounds = true;
   });
 
+//set each aliens health variable
   alien1Health = 3;
   alien2Health = 3;
   alien3Health = 3;
@@ -43,9 +45,10 @@ function AlienOneCreate() {
 
 function AlienOneUpdate() {
 
+//damage and collisions for the aliens
   AlienGroup.children.forEach(function(child) { //Applies code to all of the group's children to avoid using group code
     game.physics.arcade.collide(AlienGroup, child);
-    game.physics.arcade.moveToObject(child, player, 400)
+    game.physics.arcade.moveToObject(child, player, 800)
     game.physics.arcade.overlap(laser.bullets, Alien1, Damage1);
     game.physics.arcade.overlap(laser.bullets, Alien2, Damage2);
     game.physics.arcade.overlap(laser.bullets, Alien3, Damage3);
@@ -113,8 +116,9 @@ function AlienOneUpdate() {
       console.log('damage')
       alien9Health -= 1
       laser.killAll()
-
     }
+
+//kill aliens and set their rotation
     if (alien1Health < 0) {
       Alien1.body.moves = false;
       Alien1.minRotation = 0;
@@ -250,6 +254,7 @@ function AlienOneUpdate() {
       Alien9.maxRotation = 360;
     }
 
+//kill the aliens function
     function Kill1() {
       AlienGroup.remove(Alien1);
     }
