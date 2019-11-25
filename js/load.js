@@ -22,6 +22,7 @@ var loadState = {
     game.load.image('ball', 'assets/Ball.png');
     game.load.image('LongRange', 'assets/crosshair.png');
     game.load.image('FastFire', 'assets/bullet.png');
+    game.load.image('InfoIcon', 'assets/InfoIcon.png');
   },
 
   create: function() {

@@ -1,12 +1,18 @@
 var selectorState = {
   render: function() {
-    //game.debug.pointer(game.input.activePointer);
-    //game.debug.inputInfo(500, 300);
+    game.debug.pointer(game.input.activePointer);
+    game.debug.inputInfo(500, 300);
   },
 
   create: function() {
     brickBackground = game.add.sprite(0, 0, 'brickBackground');
     brickBackground.scale.setTo(0.5)
+
+    InfoIcon = game.add.sprite(659, 60, 'InfoIcon');
+    InfoIcon.scale.setTo(0.1)
+
+    InfoText = game.add.text(660, 128, '');
+
 
     Lvl1 = game.add.button(219, 158, 'button');
     Lvl1.anchor.setTo(0.5, 0.5);
