@@ -53,10 +53,14 @@ function allLevelsCreate() {
   //Camera follows the player
   game.camera.follow(player, Phaser.Camera.FOLLOW_LOCKON, 0.1, 0.1);
 
+  wallGroup1 = borders1();
+  wallGroup2 = borders2();
+  wallGroup3 = borders3();
+
 }
 
 function allLevelsUpdate() {
-//collisions between player and aliens to deal damage to the player
+  //collisions between player and aliens to deal damage to the player
   game.physics.arcade.collide(player, AlienGroup, PlayerDamage);
 
   LongRangeGroup.children.forEach(function(child) {
@@ -65,13 +69,13 @@ function allLevelsUpdate() {
     game.physics.arcade.overlap(LongRangeGroup, wallGroup, reposition);
     game.physics.arcade.overlap(child, player, CollectLongRange);
 
-//reposition alien of they are on a wall
+    //reposition alien of they are on a wall
     function reposition(child) {
       child.x = game.rnd.integerInRange(105, width)
       child.y = game.rnd.integerInRange(81, height)
     }
 
-//make the bullets travel further for 10 seconds with the long range power up.
+    //make the bullets travel further for 10 seconds with the long range power up.
     function CollectLongRange(child, player) {
       child.kill();
       laser.bulletLifespan = 200;
@@ -84,9 +88,9 @@ function allLevelsUpdate() {
   });
 
   FastFireGroup.children.forEach(function(child) {
-    game.physics.arcade.overlap(child, borders1(), reposition);
-    game.physics.arcade.overlap(child, borders2(), reposition);
-    game.physics.arcade.overlap(child, borders3(), reposition);
+    game.physics.arcade.overlap(child, wallGroup1, reposition);
+    game.physics.arcade.overlap(child, wallGroup2, reposition);
+    game.physics.arcade.overlap(child, wallGroup3, reposition);
     game.physics.arcade.overlap(child, player, CollectFastFire);
 
     function reposition(child) {
@@ -108,7 +112,7 @@ function allLevelsUpdate() {
 
   function PlayerDamage(player) {
 
-//remove player health if colliding with an alien
+    //remove player health if colliding with an alien
     console.log('hit')
     playerhealth -= 1
     PlayerHealthText.setText('Health: ' + playerhealth);

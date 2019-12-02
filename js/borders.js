@@ -107,6 +107,7 @@ function borders1() {
   });
 
   wallGroup1.setAll('alpha', 0) //makes walls invisble
+  return wallGroup1;
 }
 
 function borders2() {
@@ -231,6 +232,7 @@ function borders2() {
   });
 
   wallGroup2.setAll('alpha', 0);
+  return wallGroup2;
 }
 
 //Level Three Borders
@@ -328,4 +330,6 @@ function borders3() {
   });
 
   wallGroup3.setAll('alpha', 0) //makes walls invisble
+
+  return wallGroup3;
 }
